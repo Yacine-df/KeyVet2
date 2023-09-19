@@ -3,7 +3,7 @@
 </script>
 <template>
     <div class="grid place-items-center p-4 font-semibold">
-        Welcome, Welcome, Laravel with Vue and Inertia !
+       this is a landing page
     </div>
 </template>
 
