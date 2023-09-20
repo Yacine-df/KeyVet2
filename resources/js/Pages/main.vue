@@ -1,15 +1,28 @@
 <script setup>
-import { ref } from 'vue'
+    import {
+        ref
+    } from 'vue'
 
 
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-]
+    const navigation = [{
+            name: 'Product',
+            href: '#'
+        },
+        {
+            name: 'Features',
+            href: '#'
+        },
+        {
+            name: 'Marketplace',
+            href: '#'
+        },
+        {
+            name: 'Company',
+            href: '#'
+        },
+    ]
 
-const mobileMenuOpen = ref(false)
+    const mobileMenuOpen = ref(false)
 </script>
 <template>
     <div class="bg-white">
@@ -25,10 +38,10 @@ const mobileMenuOpen = ref(false)
                 <div class="flex lg:hidden">
                     <button type="button"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        @click.prevent="alert('test')">
-                        
+                        @click.prevent="mobileMenuOpen = true">
+
                         Click
-                        
+
                     </button>
                 </div>
                 <!--end humburger icon -->
@@ -37,52 +50,57 @@ const mobileMenuOpen = ref(false)
                     <a v-for="item in navigation" :key="item.name" :href="item.href"
                         class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500">{{ item . name }}</a>
                 </div>
-                
+
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" class="text-sm p-2 font-semibold leading-6 text-gray-900 hover:text-blue-500">                       
-                        Register 
+                    <a href="#" class="text-sm p-2 font-semibold leading-6 text-gray-900 hover:text-blue-500">
+                        Register
                     </a>
-                    <a href="#" class="text-sm leading-8 rounded-md bg-blue-400 px-3 py-1 font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                        Log in 
-                        <span
-                            aria-hidden="true">&rarr;
+                    <a href="#"
+                        class="text-sm leading-8 rounded-md bg-blue-400 px-3 py-1 font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                        Log in
+                        <span aria-hidden="true">&rarr;
                         </span>
                     </a>
                 </div>
             </nav>
-            <div class="lg:hidden" @click="mobileMenuOpen = false" :open="mobileMenuOpen">
-                <div class="fixed inset-0 z-50" />
-                <div v-if="mobileMenuOpen"
-                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div class="flex items-center justify-between">
-                        <a href="#" class="-m-1.5 p-1.5">
-                            <img class="h-8 w-auto" src="build/assets/images/keyvet.png"
-                            alt="" />
-                        </a>
-                        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700"
-                            @click="mobileMenuOpen = false">
-                            <span>X</span>
-                            
-                        </button>
-                    </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item . name }}</a>
-                            </div>
-                            <div class="py-6">
-                                <a href="#"
-                                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                                    in
-                                </a>
-                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
-                                    Register
-                                </a>
+            <div class="lg:hidden" @click="mobileMenuOpen = false">
+                <Transition
+                enter-from-class="transition duration-200 opacity-0"
+                enter-to-class="transition duration-200 opacity-100"
+                leave-from-class="transition duration-200 opacity-100"
+                leave-to-class="transition duration-200 opacity-0"
+                >
+                    <div v-if="mobileMenuOpen"
+                        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <img class="h-8 w-auto" src="build/assets/images/keyvet.png" alt="" />
+                            </a>
+                            <button @click="mobileMenuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                                X
+
+                            </button>
+                        </div>
+                        <div class="mt-6 flow-root">
+                            <div class="-my-6 divide-y divide-gray-500/10">
+                                <div class="space-y-2 py-6">
+                                    <a v-for="item in navigation" :key="item.name" :href="item.href"
+                                        class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item . name }}</a>
+                                </div>
+                                <div class="py-6">
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
+                                        in
+                                    </a>
+                                    <a href="#"
+                                        class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                        Register
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div >
+                </Transition>
             </div>
         </header>
 
@@ -101,14 +119,14 @@ const mobileMenuOpen = ref(false)
 
                     <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt.
                         Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-                        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div
-                        class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                        Announcing our next round of funding. <a href="#"
-                            class="font-semibold text-blue-600"><span class="absolute inset-0"
-                                aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
+                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                        <div
+                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                            Announcing our next round of funding. <a href="#"
+                                class="font-semibold text-blue-600"><span class="absolute inset-0"
+                                    aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
@@ -119,3 +137,6 @@ const mobileMenuOpen = ref(false)
         </div>
     </div>
 </template>
+<style>
+    
+</style>
