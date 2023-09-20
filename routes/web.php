@@ -16,8 +16,6 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
 
-    return Inertia::render('main',[
-        'post' => ['first' => 'yacine']
-    ]);
+    return Inertia::render('main');
     
 });
