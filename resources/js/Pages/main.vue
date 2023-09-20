@@ -1,15 +1,21 @@
 <script setup>
+    import { library } from '@fortawesome/fontawesome-svg-core';
+    import { faBars } from '@fortawesome/free-solid-svg-icons';
+    import { faXmark } from '@fortawesome/free-solid-svg-icons';
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
     import {
         ref
     } from 'vue'
 
+    library.add(faBars, faXmark);
 
     const navigation = [{
-            name: 'Product',
+            name: 'Company',
             href: '#'
         },
         {
-            name: 'Features',
+            name: 'Blog',
             href: '#'
         },
         {
@@ -17,7 +23,7 @@
             href: '#'
         },
         {
-            name: 'Company',
+            name: 'Features',
             href: '#'
         },
     ]
@@ -40,7 +46,7 @@
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
                         @click.prevent="mobileMenuOpen = true">
 
-                        Click
+                        <font-awesome-icon icon="fa-solid fa-bars" class="text-3xl text-blue-500"></font-awesome-icon>
 
                     </button>
                 </div>
@@ -50,6 +56,7 @@
                     <a v-for="item in navigation" :key="item.name" :href="item.href"
                         class="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-500">{{ item . name }}</a>
                 </div>
+
 
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                     <a href="#" class="text-sm p-2 font-semibold leading-6 text-gray-900 hover:text-blue-500">
@@ -77,7 +84,8 @@
                                 <img class="h-8 w-auto" src="build/assets/images/keyvet.png" alt="" />
                             </a>
                             <button @click="mobileMenuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                                X
+                                
+                                <font-awesome-icon icon="fa-solid fa-xmark" class="text-3xl text-blue-500"></font-awesome-icon>
 
                             </button>
                         </div>
