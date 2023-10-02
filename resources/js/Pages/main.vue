@@ -1,58 +1,69 @@
 <script setup>
-    import { library } from '@fortawesome/fontawesome-svg-core';
-    import { faBars } from '@fortawesome/free-solid-svg-icons';
-    import { faXmark } from '@fortawesome/free-solid-svg-icons';
-    import navbar from '../Shared/navbar.vue';
-    import navbarMobile from '../Shared/navbarMobile.vue';
-    import {ref} from 'vue';
-
-    library.add(faBars, faXmark);
-
-    const mobileMenuOpen = ref(false)
-
+    import Layout from '../Shared/Layout.vue';
 </script>
 <template>
-    <div class="bg-white">
-        <header class="absolute inset-x-0 top-0 z-50">
-            
-            <navbar></navbar>
+    <Layout>
 
-            <navbarMobile :mobileMenuOpen="mobileMenuOpen"></navbarMobile>
-        </header>
+        <template #content>
 
-        <div class="relative isolate px-6 pt-14 lg:px-8">
-            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-                aria-hidden="true">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#2AAADE] to-[#2aaade] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
-            </div>
-            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                <div class="text-center">
+            <div class="text-center py-4 px-8">
 
-                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                        <img class="w-auto" src="build/assets/images/keyvet.png" alt="" />
-                    </h1>
+                <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                    <img class="w-auto mx-auto" src="build/assets/images/keyvet.png" alt="" />
+                </h1>
 
-                    <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt.
-                        Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-                    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div
-                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                            Announcing our next round of funding. <a href="#"
-                                class="font-semibold text-blue-600"><span class="absolute inset-0"
-                                    aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></a>
-                        </div>
+                <p class="mt-6 text-lg leading-8">Anim aute id magna aliqua ad ad non deserunt sunt.
+                    Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="relative rounded-full px-3 py-1 my-2 text-sm leading-6 ring-1 ring-blue-800ue-900/10 hover:ring-blue-900e-900/20">
+                        Announcing our next round of funding. 
+                        <a href="#" class="font-semibold text-blue-600">
+                            <span class="absolute inset-0" aria-hidden="true" />
+                            Read more 
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-                aria-hidden="true">
-                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#2AAADE] to-[#2aaade] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
+
+            <div class="w-full py-8 flex items-center justify-center">
+                <img src="build/assets/images/Connector_line.svg" alt="">
             </div>
-        </div>
-    </div>
+
+
+            <section id="animal_health" class="w-full pb-4">
+                <h1 class="mx-auto w-full py-4 font-bold text-2xl text-center">Animal Health</h1>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                    <img class="col-span-2 lg:col-span-1 rounded-full opacity-80 hover:opacity-95 shadow-md" src="build/assets/images/poultry.jpg" alt="">
+                    <p class="col-span-2 lg:col-span-1 flex items-center justify-center">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem necessitatibus repellendus exercitationem ut quo illum,
+                        voluptatibus, eveniet ipsum dolores debitis aperiam ex consequatur iure dignissimos non dolore alias quos nam!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reiciendis ad veritatis ea? Deleniti ab quis dignissimos tenetur dolore,
+                        ad provident nam. Ut harum mollitia nemo illum distinctio quisquam fugiat?
+                    </p>
+                </div>
+            </section>
+
+            <div class="w-full px-10 flex items-center justify-center">
+                <img class="w-full px-6" src="build/assets/images/curvy_connector.svg" alt="">
+            </div>
+
+            <section class="w-full pb-4">
+                <h1 class="mx-auto w-full py-4 font-bold text-2xl">Animal Medication</h1>
+                <div class="grid grid-cols-2 gap-4 py-4">
+                    <img class="col-span-2 lg:col-span-1 rounded-full opacity-80 hover:opacity-95 shadow-md" src="build/assets/images/poultry.jpg" alt="">
+                    <p class="col-span-2 lg:col-span-1 flex items-center justify-center">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem necessitatibus repellendus exercitationem ut quo illum,
+                        voluptatibus, eveniet ipsum dolores debitis aperiam ex consequatur iure dignissimos non dolore alias quos nam!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reiciendis ad veritatis ea? Deleniti ab quis dignissimos tenetur dolore,
+                        ad provident nam. Ut harum mollitia nemo illum distinctio quisquam fugiat?
+                    </p>
+                </div>
+            </section>
+        </template>
+
+    </Layout>
 </template>
 <style>
-    
+
 </style>
