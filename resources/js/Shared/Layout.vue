@@ -22,7 +22,7 @@
 <template>
     <div class="transition ease-in-out delay-50 "
         :class="{
-            'bg-blue-950 text-white': mode == 'dark',
+            'bg-blue-950 text-white dark:bg-blue-950 dark:text-white': mode == 'dark',
             'bg-white text-black': mode == 'light'
         }">
         <header class="absolute inset-x-0 top-0 z-50">
