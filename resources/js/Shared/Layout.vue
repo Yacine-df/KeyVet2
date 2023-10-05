@@ -4,15 +4,18 @@
     import {faXmark} from '@fortawesome/free-solid-svg-icons';
     import {faMoon} from '@fortawesome/free-solid-svg-icons';
     import { faSun } from '@fortawesome/free-solid-svg-icons';
+    import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+    import { faInstagram } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
-    import Navbar from '../Components/Navbar.vue';
-    import NavbarMobile from '../Components/NavbarMobile.vue';
+    import Navbar from './Components/Navbar.vue';
+    import NavbarMobile from './Components/NavbarMobile.vue';
+    import Footer from './Components/Footer.vue';
     import PolygonDesign from './PolygonDesign.vue';
     import {useStorage} from '../Composables/useStorage.js'; 
 
-    import {ref, watch} from 'vue';
+    import {ref} from 'vue';
 
-    library.add(faBars, faXmark, faMoon, faSun);
+    library.add(faBars, faXmark, faMoon, faSun,faFacebook,faInstagram);
 
     const mobileMenuOpen = ref(false);
     const mode = useStorage('mode');
@@ -101,4 +104,12 @@
 
         </div>
     </div>
+    <Footer>
+        <template #facebook>
+            <font-awesome-icon class="text-xl text-blue-700" icon="fa-brands fa-facebook" />
+        </template>
+        <template #instagram>
+            <font-awesome-icon class="text-xl text-red-700" icon="fa-brands fa-instagram" />
+        </template>
+    </Footer>
 </template>

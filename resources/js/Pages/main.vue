@@ -13,12 +13,9 @@
                 <h1 class="mt-6 text-3xl font-extrabold">Algerian Company for <br>Consult and pharm in animal healthcare</h1>
 
                 <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                    <div class="relative rounded-full px-3 py-1 my-2 text-sm leading-6 ring-1 ring-blue-800ue-900/10 hover:ring-blue-900e-900/20">
-                        Announcing our next round of funding. 
-                        <a href="#" class="font-semibold text-blue-600">
-                            <span class="absolute inset-0" aria-hidden="true" />
-                            Read more 
-                            <span aria-hidden="true">&rarr;</span>
+                    <div class="relative rounded-full px-3 py-1 my-2 text-sm leading-6 bg-blue-600 hover:ring-blue-900e-900/20"> 
+                        <a href="#animal_health" class="font-bold text-lg text-white">
+                            What we Ensure ?
                         </a>
                     </div>
                 </div>
@@ -65,7 +62,6 @@
                 </div>
             </section>
         </template>
-
     </Layout>
 </template>
 <style>
