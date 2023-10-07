@@ -1,19 +1,20 @@
 <script setup>
+import { Link } from '@inertiajs/vue3';
 import Logo from './Logo.vue';
 const navigation = [{
-            name: 'Company',
-            href: '#'
+            name: 'Home',
+            href: '/'
         },
         {
-            name: 'Blog',
-            href: '#'
+            name: 'About us',
+            href: '/aboutUs'
         },
         {
             name: 'Marketplace',
             href: '#'
         },
         {
-            name: 'Features',
+            name: 'Blog',
             href: '#'
         },
     ]
@@ -38,8 +39,8 @@ const navigation = [{
         <!--end humburger icon -->
 
         <div class="hidden lg:flex lg:gap-x-12">
-            <a v-for="item in navigation" :key="item.name" :href="item.href"
-                class="text-sm font-semibold leading-6 hover:text-blue-500">{{ item . name }}</a>
+            <Link v-for="item in navigation" :key="item.name" :href="item.href"
+                class="text-base font-semibold leading-6 hover:text-blue-500">{{ item . name }}</Link>
         </div>
 
 

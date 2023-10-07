@@ -42,7 +42,7 @@
                 </div>
             </section>
 
-            <div class="w-full px-10 flex items-center justify-center">
+            <div class="hidden w-full px-10 sm:flex items-center justify-center">
                 <img class="w-full px-6" src="build/assets/images/curvy_connector.svg" alt="">
             </div>
 
