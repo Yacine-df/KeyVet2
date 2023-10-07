@@ -56,10 +56,10 @@
                         <div class="relative h-auto lg:py-10 xl:py-16 flex -ml-8 pr-4 sm:ml-0 sm:pr-0">
                             <div class="absolute top-0 left-0 z-10 h-full bg-gray-100 w-full rounded-3xl"></div>
                             <div
-                                class="absolute top-0 left-0 z-20 h-full w-full  -ml-full rounded-3xl transform shadow-lg bg-gradient-to-br from-cyan-400 to-blue-900 -rotate-1 sm:-rotate-2">
+                                class="absolute top-0 left-0 z-20 h-full w-full -ml-full rounded-3xl transform shadow-2xl bg-gradient-to-br from-blue-950 to-blue-500 -rotate-2 sm:-rotate-2">
                             </div>
                             <div class="z-50 px-8">
-                                <h1 class="text-center font-extrabold text-3xl mb-6 text-white">Our Doctors</h1>
+                                <h1 class="text-center font-extrabold text-3xl my-6 text-white">Our Doctors</h1>
                                 <ul class="md:flex items-center justify-between gap-x-12">
                                     <li class="my-4   bg-white rounded-lg text-black">
                                         <div class="md:flex gap-x-6 py-2 px-4 md:py-0 md:px-0">
