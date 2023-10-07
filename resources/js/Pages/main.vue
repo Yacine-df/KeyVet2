@@ -35,7 +35,7 @@
                     <div class="col-span-2 lg:col-span-1 md:flex items-center justify-around">
                         <img class="md:w-40 md:h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="animate-bouncing mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                         <img class="w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
@@ -66,7 +66,7 @@
                     <div class="col-span-2 lg:col-span-1 md:flex items-center justify-around">
                         <img class="md:w-40 md:h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="animate-bouncing mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                         <img class="w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
