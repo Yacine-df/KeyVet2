@@ -12,7 +12,6 @@
     import Footer from './Components/Footer.vue';
     import PolygonDesign from './PolygonDesign.vue';
     import {useStorage} from '../Composables/useStorage.js'; 
-
     import {ref} from 'vue';
 
     library.add(faBars, faXmark, faMoon, faSun,faFacebook,faInstagram);
@@ -29,7 +28,7 @@
             'bg-white text-black': mode == 'light'
         }">
         <header class="absolute inset-x-0 top-0 z-50">
-
+            
             <Navbar>
 
                 <template #HumbergerIcon>

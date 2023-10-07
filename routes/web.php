@@ -19,3 +19,8 @@ Route::get('/', function () {
     return Inertia::render('main');
     
 });
+Route::get('/aboutUs', function () {
+    sleep(2);
+    return Inertia::render('aboutUs');
+    
+});
