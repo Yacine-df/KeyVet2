@@ -32,12 +32,12 @@
             <section id="animal_health" class="w-full pb-4">
                 <h1 class="mx-auto w-full py-4 font-bold text-2xl text-center">Animal Health</h1>
                 <div class="grid grid-cols-2 gap-4 py-4">
-                    <div class="col-span-2 lg:col-span-1 md:flex items-center justify-around">
-                        <img class="md:w-40 md:h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                    <div class="col-span-2 lg:col-span-1 flex items-center justify-center gap-4">
+                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="animate-bouncing mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="md:animate-bouncing mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                     </div>
                     <div class="relative col-span-2 lg:col-span-1">
@@ -63,12 +63,12 @@
             <section class="w-full pb-4">
                 <h1 class="mx-auto w-full py-4 font-bold text-2xl">Animal Medication</h1>
                 <div class="grid grid-cols-2 gap-4 py-4">
-                    <div class="col-span-2 lg:col-span-1 md:flex items-center justify-around">
-                        <img class="md:w-40 md:h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                    <div class="col-span-2 lg:col-span-1 flex items-center justify-center gap-4">
+                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="animate-bouncing mb-40 w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="md:animate-bouncing mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="w-40 h-96 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                     </div>
                     <div class="relative col-span-2 lg:col-span-1">
@@ -93,7 +93,7 @@
                     <div
                         class="absolute top-0 left-0 z-20 h-full w-full  -ml-full rounded-3xl transform shadow-lg bg-gradient-to-br from-cyan-950 to-blue-600 -rotate-1 sm:-rotate-2">
                     </div>
-                    <div class="z-50 w-full flex-col items-center justify-center">
+                    <div class="z-50 w-full flex-col items-center justify-center py-6 md:py-1">
                         <h2 class="text-center text-2xl font-bold text-white">International and National laboratories that we
                             provide their medication</h2>
                         <div
