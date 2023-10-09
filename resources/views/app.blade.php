@@ -8,7 +8,7 @@
     @inertiaHead
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     @inertia
 </body>
 

@@ -1,12 +1,64 @@
 <script setup>
     import Layout from '../Shared/Layout.vue';
+    import { onMounted } from 'vue'; 
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+    onMounted(()=>{
+        gsap.from('.title',{y:-300,opacity:0,duration:3});
+        gsap.from('.cnt_line',{y:400, duration:2});
+        gsap.from('.anml-img',{
+            scrollTrigger:{
+                trigger:'.cnt_line',
+                start: 'center center',
+                toggleActions:'restart none reverse none'
+            },
+            x:-700,
+            duration:1,
+            stagger:.5
+        });
+        gsap.from('.anml_details',{
+            scrollTrigger:{
+                trigger:'.cnt_line',
+                start: 'center center',
+            },
+            x:700,
+            duration:2,
+        });
+        gsap.from('.anml-img2',{
+            scrollTrigger:{
+                trigger:'.anml-img2',
+                start: 'top center',
+            },
+            x:-700,
+            duration:2,
+            stagger:.5
+        });
+        gsap.from('.medical_details',{
+            scrollTrigger:{
+                trigger:'.medical_details',
+                start: 'top center',
+            },
+            x:700,
+            duration:2,
+        });
+        gsap.from('.partners',{
+            scrollTrigger:{
+                trigger:'.partners',
+                start: 'top center',
+            },
+            x:1500,
+            duration:2,
+
+        });
+    });
 </script>
 <template>
     <Layout>
 
         <template #content>
 
-            <div class="text-center py-12 px-8 bg-center relative">
+            <div class="title text-center py-12 px-8 bg-center relative">
 
                 <div class="w-full h-full absolute bg-no-repeat bg-contain bg-center opacity-20 top-0 left-0"
                     style="background-image: url('build/assets/images/signature.png');"></div>
@@ -24,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="w-full py-8 flex items-center justify-center">
+            <div class="cnt_line w-full py-8 flex items-center justify-center">
                 <img src="build/assets/images/Connector_line.svg" alt="">
             </div>
 
@@ -33,14 +85,14 @@
                 <h1 class="mx-auto w-full py-4 font-bold text-2xl text-center">Animal Health</h1>
                 <div class="grid grid-cols-2 gap-4 py-4">
                     <div class="col-span-2 lg:col-span-1 flex items-center justify-center gap-4">
-                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="md:animate-bouncing mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                     </div>
-                    <div class="relative col-span-2 lg:col-span-1">
+                    <div class="anml_details relative col-span-2 lg:col-span-1">
                         <div class="w-full h-full absolute bg-no-repeat bg-contain bg-center opacity-20 top-0 left-0"
                             style="background-image: url('build/assets/images/signature.png');"></div>
                         <p class="h-full col-span-2  flex items-center justify-center ">
@@ -56,7 +108,7 @@
                 </div>
             </section>
 
-            <div class="w-full px-10 flex items-center justify-center">
+            <div class="curvy_cnt hidden w-full px-10 sm:flex items-center justify-center">
                 <img class="w-full px-6" src="build/assets/images/curvy_connector.svg" alt="">
             </div>
 
@@ -64,14 +116,14 @@
                 <h1 class="mx-auto w-full py-4 font-bold text-2xl">Animal Medication</h1>
                 <div class="grid grid-cols-2 gap-4 py-4">
                     <div class="col-span-2 lg:col-span-1 flex items-center justify-center gap-4">
-                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img2 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="md:animate-bouncing mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img2 mb-40 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
-                        <img class="w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
+                        <img class="anml-img2 w-40 h-96 px-2 md:px-0 rounded-xl opacity-80 hover:opacity-95 shadow-md object-cover"
                         src="build/assets/images/poultry.jpg" alt="">
                     </div>
-                    <div class="relative col-span-2 lg:col-span-1">
+                    <div class="medical_details relative col-span-2 lg:col-span-1">
                         <div class="w-full h-full absolute bg-no-repeat bg-contain bg-center opacity-20 top-0 left-0"
                             style="background-image: url('build/assets/images/signature.png');"></div>
                         <p class="h-full  flex items-center justify-center ">
@@ -87,7 +139,7 @@
                 </div>
             </section>
             <!-- medication laboratory partner -->
-            <section class="py-24 mt-8 sm:py-32 rounded">
+            <section class="partners py-24 mt-8 sm:py-32 rounded">
                 <div class="relative h-auto lg:py-10 xl:py-16 flex -ml-8 pr-4 sm:ml-0 sm:pr-0">
                     <div class="absolute top-0 left-0 z-10 h-full bg-gray-100 w-full rounded-3xl"></div>
                     <div
