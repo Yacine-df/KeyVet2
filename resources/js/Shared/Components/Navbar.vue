@@ -1,6 +1,7 @@
 <script setup>
 import Logo from './Logo.vue';
-import {Link} from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+
 const navigation = [{
             name: 'Home',
             href: '/'
