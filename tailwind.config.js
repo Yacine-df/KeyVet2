@@ -6,7 +6,18 @@ module.exports = {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        smoothBounce: {
+          '0%': { transform: 'translateY(-5px)'  },
+          '50%': { transform: 'translateY(10px)' },
+          '100%': { transform: 'translateY(-5px)' },
+        },
+    },
+      animation: {
+       bouncing: 'smoothBounce 3s ease-in-out infinite'
+     },
+    },
   },
   plugins: [],
 }
