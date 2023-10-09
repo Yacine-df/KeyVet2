@@ -1,6 +1,40 @@
 <script setup>
     import Layout from '../Shared/Layout.vue';
     import CardHistory from '../Shared/Components/CardHistory.vue';
+    import {onMounted} from 'vue';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+    onMounted(()=>{
+        gsap.from('.card',{ x:-1500, duration:2, stagger: .5});
+        gsap.from('.doctors',{
+            scrollTrigger:{
+                trigger: ".lst",
+                start: "bottom center",
+            },
+            y:700,
+            duration:2
+        });
+        gsap.from('.contactUs_details',{
+            scrollTrigger:{
+                trigger: ".contactUs_details",
+                start: "top center",
+            },
+            opacity:0,
+            duration:2
+        });
+        gsap.from('.contactUs_form',{
+            scrollTrigger:{
+                trigger: ".contactUs_form",
+                start: "top center",
+            },
+            opacity:0,
+            duration:2
+        });
+        
+    });
+        
+
 </script>
 
 <template>
@@ -8,7 +42,7 @@
         <template #content>
             <div class="container mx-auto w-full h-full">
                 <!-- keyvet history section -->
-                <section class="relative overflow-hidden h-full">
+                <section class=" relative overflow-hidden h-full">
                     <h1 class="text-center font-extrabold text-3xl mb-6">Keyvet History</h1>
                     <!--timeline -->
                     <div class="px-4 flex flex-col">
@@ -35,7 +69,7 @@
                             </template>
                         </CardHistory>
 
-                        <CardHistory class="justify-end">
+                        <CardHistory class="lst justify-end">
                             <template #number>3</template>
                             <template #date>25-10-2023</template>
                             <template #event>
@@ -51,16 +85,16 @@
                 <!-- end keyvet history section -->
 
                 <!-- Keyvet team section -->
-                <section class="mt-32">
+                <section class="doctors mt-32">
                     <div class=" p-4 rounded">
                         <div class="relative h-auto lg:py-10 xl:py-16 flex -ml-8 pr-4 sm:ml-0 sm:pr-0">
                             <div class="absolute top-0 shadow-2xl left-0 z-20 h-full bg-white w-full rounded-3xl"></div>
                             <div
                                 class="absolute top-0 left-0 z-10 h-full w-full -ml-full rounded-3xl transform shadow-2xl bg-gradient-to-br from-blue-950 to-blue-500 -rotate-2 sm:-rotate-2">
                             </div>
-                            <div class="z-50 px-8">
+                            <div class="cards z-50 px-8">
                                 <h1 class="text-center font-extrabold text-3xl my-6 text-black">Our Doctors</h1>
-                                <ul class="md:flex items-center justify-between gap-x-12">
+                                <ul class="lg:flex items-center justify-between gap-x-12">
                                     <li class="my-4 shadow-lg rounded-lg text-black">
                                         <div class="md:flex gap-x-6 py-2 px-4 md:py-0 md:px-0">
                                             <img class="w-32 h-32 md:w-48 md:h-auto rounded-full md:rounded-sm mx-auto"
@@ -119,7 +153,7 @@
                     </div>
                     <div class="container px-6 p-12 mx-auto">
                         <div class="lg:flex lg:items-center lg:-mx-6">
-                            <div class="lg:w-1/2 lg:mx-6">
+                            <div class="contactUs_details lg:w-1/2 lg:mx-6">
                                 <h1 class="text-2xl font-semibold text-gray-800 capitalize dark:text-white lg:text-3xl">
                                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-5xl font-extrabold">
                                         Contact us
@@ -218,7 +252,7 @@
                                 </div>
                             </div>
                             <!-- contact us form -->
-                            <div class="mt-8 lg:w-1/2 lg:mx-6 shadow-2xl rounded-xl">
+                            <div class="contactUs_form mt-8 lg:w-1/2 lg:mx-6 shadow-2xl rounded-xl">
                                 <div
                                     class="w-full px-8 py-10 mx-auto overflow-hidden bg-white rounded-lg shadow-2xl dark:bg-gray-900 lg:max-w-xl shadow-blue-200 dark:shadow-black/50">
                                     <h1 class="text-lg font-medium text-gray-700">What do you want to ask ? 🤔</h1>
