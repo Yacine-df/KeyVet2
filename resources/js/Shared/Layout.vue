@@ -28,7 +28,7 @@
             'bg-blue-950 text-white dark:bg-blue-950 dark:text-white': mode == 'dark',
             'bg-white text-black': mode == 'light'
         }">
-        <header class="absolute inset-x-0 top-0 z-50">
+        <header class="absolute inset-x-0 top-0 z-10">
             
             <Navbar :navigation="navigation">
 

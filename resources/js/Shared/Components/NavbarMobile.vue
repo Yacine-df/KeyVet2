@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/vue3';
 
 defineProps({
     mobileMenuOpen:Boolean,
-    navigation:Array
+    navigation:Object
 })
 
 

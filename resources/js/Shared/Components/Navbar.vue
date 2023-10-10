@@ -8,7 +8,7 @@ defineProps({
 
 <template>
 
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between p-6 lg:px-8">
 
         <!-- logo goes here -->
         <div class="flex lg:flex-1">
@@ -25,7 +25,8 @@ defineProps({
 
         <div class="hidden lg:flex lg:gap-x-12">
             <Link v-for="item in navigation" :key="item.name" :href="item.href"
-                class="text-base font-semibold leading-6 hover:text-blue-500">{{ item . name }}</Link>
+                class="text-base font-semibold leading-6 hover:text-blue-500"
+                :class="{'text-blue-400': $page.url == item.href}">{{ item . name }}</Link>
         </div>
 
 
