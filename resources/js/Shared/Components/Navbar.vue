@@ -48,15 +48,15 @@ const navigation = [{
 
              <slot name="mode"></slot>
 
-            <a href="#" class="text-sm p-2 font-semibold leading-6 hover:text-blue-500">
+            <Link href="#" class="text-sm p-2 font-semibold leading-6 hover:text-blue-500">
                 Register
-            </a>
-            <a href="#"
+            </Link>
+            <Link href="#"
                 class="text-sm leading-8 rounded-md  px-3 py-1 font-semibold  shadow-sm text-blue-500 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
                 Log in
                 <span aria-hidden="true">&rarr;
                 </span>
-            </a>
+            </Link>
 
         </div>
     </nav>

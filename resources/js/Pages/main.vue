@@ -14,7 +14,6 @@
             scrollTrigger:{
                 trigger:'.cnt_line',
                 start: 'center center',
-                toggleActions:'restart none reverse none'
             },
             x:-700,
             duration:1,
@@ -24,7 +23,6 @@
             scrollTrigger:{
                 trigger:'.cnt_line',
                 start: 'center center',
-                toggleActions:'restart none reverse none'
             },
             x:700,
             duration:2,
@@ -34,7 +32,6 @@
             scrollTrigger:{
                 trigger:'.anml-img2',
                 start: 'top center',
-                toggleActions:'restart none reverse none'
             },
             x:-700,
             duration:2,
@@ -44,7 +41,6 @@
             scrollTrigger:{
                 trigger:'.medical_details',
                 start: 'top center',
-                toggleActions:'restart none reverse none'
             },
             x:700,
             duration:2,
@@ -54,7 +50,6 @@
             scrollTrigger:{
                 trigger:'.partners',
                 start: 'top center',
-                toggleActions:'restart none reverse none'
             },
             x:1500,
             duration:2,
