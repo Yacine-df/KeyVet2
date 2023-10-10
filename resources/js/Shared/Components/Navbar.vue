@@ -1,24 +1,9 @@
 <script setup>
 import Logo from './Logo.vue';
 import { Link } from '@inertiajs/vue3';
-const navigation = [{
-            name: 'Home',
-            href: '/'
-        },
-        {
-            name: 'About us',
-            href: '/aboutUs'
-        },
-        {
-            name: 'Marketplace',
-            href: '#'
-        },
-        {
-            name: 'Blog',
-            href: '#'
-        },
-    ]
-
+defineProps({
+    navigation:Array
+})
 </script>
 
 <template>

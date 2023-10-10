@@ -3,26 +3,10 @@ import Logo from './Logo.vue';
 import { Link } from '@inertiajs/vue3';
 
 defineProps({
-    mobileMenuOpen:Boolean
+    mobileMenuOpen:Boolean,
+    navigation:Array
 })
 
-const navigation = [{
-            name: 'Home',
-            href: '/'
-        },
-        {
-            name: 'About us',
-            href: '/aboutUs'
-        },
-        {
-            name: 'Marketplace',
-            href: '#'
-        },
-        {
-            name: 'Blog',
-            href: '#'
-        },
-    ]
 
 </script>
 
