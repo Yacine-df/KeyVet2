@@ -5,8 +5,11 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     gsap.registerPlugin(ScrollTrigger);
     onMounted(()=>{
+        //animate title
         gsap.from('.title',{y:-300,opacity:0,duration:3});
+        //animate connector line after the title
         gsap.from('.cnt_line',{y:400, duration:2});
+        //animate animals section
         gsap.from('.anml-img',{
             scrollTrigger:{
                 trigger:'.cnt_line',
@@ -21,14 +24,17 @@
             scrollTrigger:{
                 trigger:'.cnt_line',
                 start: 'center center',
+                toggleActions:'restart none reverse none'
             },
             x:700,
             duration:2,
         });
+        //animate medical section
         gsap.from('.anml-img2',{
             scrollTrigger:{
                 trigger:'.anml-img2',
                 start: 'top center',
+                toggleActions:'restart none reverse none'
             },
             x:-700,
             duration:2,
@@ -38,14 +44,17 @@
             scrollTrigger:{
                 trigger:'.medical_details',
                 start: 'top center',
+                toggleActions:'restart none reverse none'
             },
             x:700,
             duration:2,
         });
+        //animate partners section
         gsap.from('.partners',{
             scrollTrigger:{
                 trigger:'.partners',
                 start: 'top center',
+                toggleActions:'restart none reverse none'
             },
             x:1500,
             duration:2,
