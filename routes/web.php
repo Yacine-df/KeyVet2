@@ -20,10 +20,11 @@ Route::get('/', function () {
     
 });
 Route::get('/aboutUs', function () {
-    sleep(2);
     return Inertia::render('aboutUs');
 });
 Route::get('/market', function () {
-    sleep(2);
     return Inertia::render('market');
+});
+Route::get('/market/1/card', function () {
+    return Inertia::render('shoppingCard');
 });

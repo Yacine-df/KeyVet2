@@ -20,7 +20,7 @@
                 </li>
             </ul>
             <div class="w-full flex items-center justify-center py-4">
-                <Link href="/market/1/card" class="text-blue-900 font-medium hover:text-blue-700">Checkout</Link>
+                <Link href="/market/1/card" class="text-blue-900 font-medium hover:text-blue-700">more details</Link>
             </div>
         </div>
     </Transition>
