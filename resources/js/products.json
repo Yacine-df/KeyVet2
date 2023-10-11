@@ -1,0 +1,51 @@
+  {
+    "nature":["solid","serup","liquid"],
+    "categories":["collis","covid", "toxic"],
+    "products":[
+        {
+        "id": 1,
+        "name": "Earthen Bottle",
+        "href": "#",
+        "price": 4800,
+        "category":"collis",
+        "imageSrc": "https://5.imimg.com/data5/SELLER/Default/2022/1/ZE/FT/AT/317547/milkogen-homoeopathy-veterinary-medicine-500x500.png",
+        "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper."
+        },
+        {
+            "id": 2,
+            "name": "Nomad Tumbler",
+            "href": "#",
+            "price": 3500,
+            "category":"collis",
+            "imageSrc": "https://5.imimg.com/data5/SELLER/Default/2022/1/ZE/FT/AT/317547/milkogen-homoeopathy-veterinary-medicine-500x500.png",
+            "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top."
+        },
+        {
+            "id": 3,
+            "name": "Focus Paper Refill",
+            "href": "#",
+            "price": 8900,
+            "category":"collis",
+            "imageSrc": "https://5.imimg.com/data5/SELLER/Default/2022/1/ZE/FT/AT/317547/milkogen-homoeopathy-veterinary-medicine-500x500.png",
+            "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+        },
+        {
+            "id": 4,
+            "name": "Machined Mechanical Pencil",
+            "href": "#",
+            "price": 3500,
+            "category":"collis",
+            "imageSrc": "https://5.imimg.com/data5/SELLER/Default/2022/1/ZE/FT/AT/317547/milkogen-homoeopathy-veterinary-medicine-500x500.png",
+            "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top."
+        },
+        {
+            "id": 5,
+            "name": "Focus Paper Refill",
+            "href": "#",
+            "price": 8900,
+            "category":"collis",
+            "imageSrc": "https://5.imimg.com/data5/SELLER/Default/2022/1/ZE/FT/AT/317547/milkogen-homoeopathy-veterinary-medicine-500x500.png",
+            "imageAlt": "Person using a pen to cross a task off a productivity paper card."
+        }
+    ]
+}
