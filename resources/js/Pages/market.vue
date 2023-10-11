@@ -1,17 +1,15 @@
 <script setup>
     import Layout from '../Shared/Layout.vue';
-    import {
-        library
-    } from '@fortawesome/fontawesome-svg-core';
-    import {
-        FontAwesomeIcon
-    } from '@fortawesome/vue-fontawesome';
-    import {
-        faCartShopping
-    } from '@fortawesome/free-solid-svg-icons';
+    import {library} from '@fortawesome/fontawesome-svg-core';
+    import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+    import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
+    import {ref} from 'vue';
+    import cardDropDown from '../Components/cardDropDown.vue';
 
 
     library.add(faCartShopping);
+
+    const cardOpened = ref(false);
 
     const products = [{
             id: 1,
@@ -60,7 +58,7 @@
 <template>
     <Layout>
         <template #content>
-            <div class="relative grid grid-cols-12 gap-2">
+            <div class="grid grid-cols-12 gap-2">
                 <aside class="col-span-12 md:col-span-2 bg-white text-black rounded-lg shadow-md md:h-96">
                     <h1 class="text-xl py-4 text-black font-bold text-center">Filters</h1>
                     <!-- Filters -->
@@ -113,21 +111,37 @@
                 </aside>
                 <div class="col-span-12 md:col-span-10 rounded-lg">
                     <section class="w-full bg-white rounded-lg px-6 shadow-2xl">
-                        <h1 class="text-3xl py-6 text-black font-bold">Our Products</h1>
+                        <div class="flex items-center justify-between">
+                            <h1 class="text-3xl py-6 text-black font-bold">
+                                Our Products
+                            </h1>
+                            <!-- shoppin card -->
+                            <div class="relative py-6">
+                                <button href="" class="flex items-center justify-center"
+                                    @click.prevent.stop="cardOpened = ! cardOpened">
+                                    <h1 class="font-bold text-blue-900 px-2">Shopping Card</h1>
+                                    <span class="absolute flex h-2 w-2 top-4 right-0">
+                                        <span
+                                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-800"></span>
+                                    </span>
+                                    <font-awesome-icon icon="fa-solid fa-cart-shopping"
+                                        class="text-xl text-blue-900"></font-awesome-icon>
+                                </button>
+
+                                <cardDropDown :cardOpened="cardOpened" :products="products"></cardDropDown>
+                                
+                            </div>
+
+                            <!-- end shopping card -->
+                        </div>
                         <div class="md:flex items-center justify-between py-4 px-4">
                             <div class="flex items-center justify-center py-1">
                                 <label for="search"></label>
                                 <input class="bg-gray-100 rounded-full py-2 px-6 text-black" type="text"
                                     placeholder="search for product ...">
                             </div>
-                            <!-- shoppin card -->
-                            <div class="py-4">
-                               <a href="" class="flex items-center justify-center" @click.prevent="console.log('clicked')">
-                                <h1 class="font-bold text-blue-900 px-2">Shopping Card</h1>
-                                    <font-awesome-icon icon="fa-solid fa-cart-shopping" class="text-xl text-blue-900"></font-awesome-icon>
-                               </a>
-                            </div>
-                            <!-- end shopping card -->
+
                         </div>
                         <div
                             class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 py-2">
@@ -137,17 +151,15 @@
                                         class="h-full w-full     object-cover object-center group-hover:opacity-75" />
                                 </div>
                                 <h3 class="mt-4 text-sm text-gray-700">{{ product . name }}</h3>
-                                <p class="mt-1 text-lg font-medium text-gray-900">{{ product . price }}</p>
+                                <div class="flex items-center justify-between">
+                                    <p class="mt-1 text-lg font-medium text-gray-900">{{ product . price }}</p>
+                                    <button class="text-blue-500 text-sm mt-1 font-medium">+ Add to card</button>
+                                </div>
                             </a>
                         </div>
                     </section>
                 </div>
-            </div>
-            <div v-if="false"
-                class="fixed inset-y-0 right-0 z-20 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                <div class="flex items-center justify-between">
-                    dfdss
-                </div>
+
             </div>
         </template>
     </Layout>

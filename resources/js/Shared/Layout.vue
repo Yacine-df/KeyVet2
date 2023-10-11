@@ -28,7 +28,7 @@
             'bg-blue-950 text-white dark:bg-blue-950 dark:text-white': mode == 'dark',
             'bg-white text-black': mode == 'light'
         }">
-        <header class="absolute inset-x-0 top-0 z-10">
+        <header class="absolute inset-x-0 top-0 z-20">
             
             <Navbar :navigation="navigation">
 
@@ -78,7 +78,7 @@
             </NavbarMobile>
         </header>
 
-        <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="relative isolate z-10 px-6 pt-6 lg:px-8">
 
             <PolygonDesign class="-top-40">
                 <template #polygon>
