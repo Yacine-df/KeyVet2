@@ -1,4 +1,9 @@
 <script setup>
+    import Navbar from './Components/Navbar.vue';
+    import NavbarMobile from './Components/NavbarMobile.vue';
+    import Footer from './Components/Footer.vue';
+    import PolygonDesign from './PolygonDesign.vue';
+    import {navigation} from '../Composables/useNavigation.js'
     import {library} from '@fortawesome/fontawesome-svg-core';
     import { faBars} from '@fortawesome/free-solid-svg-icons';
     import {faXmark} from '@fortawesome/free-solid-svg-icons';
@@ -7,18 +12,15 @@
     import { faFacebook } from '@fortawesome/free-brands-svg-icons';
     import { faInstagram } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
-    import Navbar from './Components/Navbar.vue';
-    import NavbarMobile from './Components/NavbarMobile.vue';
-    import Footer from './Components/Footer.vue';
-    import PolygonDesign from './PolygonDesign.vue';
     import {useStorage} from '../Composables/useStorage.js'; 
     import {ref} from 'vue';
-
+    //register icon that we need
     library.add(faBars, faXmark, faMoon, faSun,faFacebook,faInstagram);
-
+    //navigation menu
     const mobileMenuOpen = ref(false);
-    const mode = useStorage('mode');
-
+    //composable for local storage
+    const mode = useStorage('mode', 'dark');
+    
 </script>
 
 <template>
@@ -27,9 +29,9 @@
             'bg-blue-950 text-white dark:bg-blue-950 dark:text-white': mode == 'dark',
             'bg-white text-black': mode == 'light'
         }">
-        <header class="absolute inset-x-0 top-0 z-50">
+        <header class="absolute inset-x-0 top-0 z-20">
             
-            <Navbar>
+            <Navbar :navigation="navigation">
 
                 <template #HumbergerIcon>
 
@@ -64,7 +66,7 @@
 
             </Navbar>
 
-            <NavbarMobile :mobileMenuOpen="mobileMenuOpen">
+            <NavbarMobile :mobileMenuOpen="mobileMenuOpen" :navigation="navigation">
 
                 <template #HumbergerIcon>
                     <button @click="mobileMenuOpen = false" class="-m-2.5 rounded-md p-2.5 text-gray-700">
@@ -77,7 +79,7 @@
             </NavbarMobile>
         </header>
 
-        <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="relative isolate z-10 px-6 pt-6 lg:px-8">
 
             <PolygonDesign class="-top-40">
                 <template #polygon>

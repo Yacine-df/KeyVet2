@@ -1,29 +1,14 @@
 <script setup>
 import Logo from './Logo.vue';
 import { Link } from '@inertiajs/vue3';
-const navigation = [{
-            name: 'Home',
-            href: '/'
-        },
-        {
-            name: 'About us',
-            href: '/aboutUs'
-        },
-        {
-            name: 'Marketplace',
-            href: '#'
-        },
-        {
-            name: 'Blog',
-            href: '#'
-        },
-    ]
-
+defineProps({
+    navigation:Array
+})
 </script>
 
 <template>
 
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between p-6 lg:px-8">
 
         <!-- logo goes here -->
         <div class="flex lg:flex-1">
@@ -40,7 +25,8 @@ const navigation = [{
 
         <div class="hidden lg:flex lg:gap-x-12">
             <Link v-for="item in navigation" :key="item.name" :href="item.href"
-                class="text-base font-semibold leading-6 hover:text-blue-500">{{ item . name }}</Link>
+                class="text-base font-semibold leading-6 hover:text-blue-500"
+                :class="{'text-blue-400': $page.url == item.href}">{{ item . name }}</Link>
         </div>
 
 
@@ -48,15 +34,15 @@ const navigation = [{
 
              <slot name="mode"></slot>
 
-            <a href="#" class="text-sm p-2 font-semibold leading-6 hover:text-blue-500">
+            <Link href="#" class="text-sm p-2 font-semibold leading-6 hover:text-blue-500">
                 Register
-            </a>
-            <a href="#"
+            </Link>
+            <Link href="#"
                 class="text-sm leading-8 rounded-md  px-3 py-1 font-semibold  shadow-sm text-blue-500 hover:text-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
                 Log in
                 <span aria-hidden="true">&rarr;
                 </span>
-            </a>
+            </Link>
 
         </div>
     </nav>
