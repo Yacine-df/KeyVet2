@@ -19,7 +19,8 @@
     //navigation menu
     const mobileMenuOpen = ref(false);
     //composable for local storage
-    const mode = useStorage('mode');
+    const mode = useStorage('mode', 'dark');
+    
 </script>
 
 <template>

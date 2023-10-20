@@ -9,7 +9,7 @@ export const navigation =
 },
 {
     name: 'Marketplace',
-    href: '/market'
+    href: '/products'
 },
 {
     name: 'Blog',

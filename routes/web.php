@@ -15,16 +15,17 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-
     return Inertia::render('main');
-    
 });
 Route::get('/aboutUs', function () {
     return Inertia::render('aboutUs');
 });
-Route::get('/market', function () {
-    return Inertia::render('market');
+Route::get('/products', function () {
+    return Inertia::render('products');
 });
 Route::get('/market/1/card', function () {
     return Inertia::render('shoppingCard');
+});
+Route::get('/products/{product}', function(){
+    return Inertia::render('product');
 });

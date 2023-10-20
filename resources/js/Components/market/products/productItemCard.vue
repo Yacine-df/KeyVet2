@@ -1,12 +1,12 @@
 <script setup>
-import {shoppingCard} from '../../Stores/ShoppingCardStore';
+import { shoppingCard } from '../../../Stores/ShoppingCardStore';
     defineProps({
-        products:Array
+        order:Array
     })
     
 </script>
 <template>
-    <li v-for="product in products" :key="product.id" :href="product.href" class="py-4">
+    <li v-for="(product, index) in order.products" :key="index" :href="product.href" class="py-4">
         <div class="flex justify-around">
             <div class="overflow-hidden rounded-lg bg-gray-200 hover:bg-gray-100">
                 <img :src="product.imageSrc" :alt="product.imageAlt"
@@ -28,7 +28,7 @@ import {shoppingCard} from '../../Stores/ShoppingCardStore';
                 </div>
                 <div class="flex flex-col items-start justify-start px-4 text-black">
                     <select v-model="product.qty" class="mt-4 px-4 py-1 border border-gray-200 focus:ring-2 focus:ring-blue-500/50 rounded-lg"
-                        name="qty" id="">
+                        name="qty">
                         <option>1</option>
                         <option>2</option>
                     </select>

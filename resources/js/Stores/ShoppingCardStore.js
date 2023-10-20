@@ -1,43 +1,53 @@
-import { sum } from 'lodash';
 import {reactive, watch} from 'vue';
-
 export let shoppingCard  = reactive({
 
-    //state
-    products: [],
-    total: 0,
-    discount :10,
-
-    //action
+//state(data)
+    order:{
+        products: [],
+        total: 0,
+        discount :10
+    },
+//Actions(methods)
     addToCard(product){
         //check whether a product is added to the list or not
-        if (! this.products.includes(product)) {
+        if (! this.order.products.includes(product)) {
 
             product.qty = 1;
 
-            this.products.push(product);
+            this.order.products.push(product);
+            alert('Product added successfully');
         }else{
 
             alert("already added");
 
         }
     },
+    //remove a product from the card
     removeFromCard(index){
-        this.products.splice(index, 1);
-    }
+        this.order.products.splice(index, 1);
+    },
    
 })
-watch(shoppingCard.products,()=>{
+//this funtion watch any changes in products array (adding or deleting , new qty)
+// it will calcultate the sum of the total products
+    const order = shoppingCard.order;
 
-    let sum = 0;
+    watch(order,()=>{
+  
+        let sum = 0;
 
-    shoppingCard.products.forEach(product=>{
+        order.products.forEach(product=>{
 
-        sum += product.qty * product.price
-        
-    });
+            sum += parseInt(product.qty) * product.price;
+            
+        });
 
-    shoppingCard.total = sum;
-    console.log(shoppingCard.total);
-    
-});
+        if(order.discount){
+
+            sum = (sum * order.discount)/100;
+
+        }
+
+        order.total = sum;
+
+    },{deep:true});

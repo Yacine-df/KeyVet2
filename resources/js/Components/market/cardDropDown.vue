@@ -13,7 +13,7 @@ import { shoppingCard } from '../../Stores/ShoppingCardStore';
         <div v-if="cardOpened"
             class="absolute shadow-2xl right-0 z-10 mt-4 w-80 origin-top-right rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
             <ul class="text-black">
-                <li v-for="product in products" :key="index" class="block px-4 py-3 text-sm hover:bg-gray-100">
+                <li v-for="(product, index) in products" :key="index" class="block px-4 py-3 text-sm hover:bg-gray-100">
                     <div class="flex items-center justify-between">
                         <span class="text-gray-500">{{ product . name }}</span>
                         <span class="realtive text-gray-600 px-2">
